@@ -23,8 +23,6 @@ URL_railway <- "http://www.mapcruzin.com/download-shapefile/netherlands-railways
 URL_places <- "http://www.mapcruzin.com/download-shapefile/netherlands-places-shape.zip"
 
 #Download & unzip data
-#Data
-
 download_data(URL_railway)
 download_data(URL_places)
 
@@ -44,7 +42,7 @@ places_RD <- spTransform(places, project_RD)
 # Extract type "industrial" from railways
 industrial <- railways_RD[railways_RD$type == 'industrial',]
 
-# buffer maken rond industrial spoorlijn
+# Make a buffer around the railway classified as "industrial"
 buffer <- gBuffer(industrial, byid=F, width=1000)
 
 # Intersect to check which "place" falls within the "buffer" of the industrial railways
