@@ -14,11 +14,22 @@ library(rgeos)
 # Check working directory
 getwd()
 
+# Call functions
+#source()
+#source()
+
+# Specify weblinks to download
+#URL
+
+#Download & unzip data
 #Data
 railways <- readOGR('data/railways.shp', 'railways')
 industrial <- railways[railways$type == 'industrial',]
 str(industrial)
 plot(industrial)
+
+# Change projection
+
 
 ### buffer maken rond industrial spoorlijn
 plot(industrial, col = 'grey')
@@ -61,3 +72,5 @@ plot(indusRD)
 
 buffer <- gBuffer(industrial, byid=F, width=100)
 plot(buffer)
+
+#####################
